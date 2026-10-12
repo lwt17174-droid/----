@@ -1,0 +1,12 @@
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Dependencies and generated build output
+node_modules/
+dist/
+build/
+*.log
