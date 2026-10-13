@@ -1,158 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#fff8ed">
-  <meta name="description" content="一颗赣南脐橙，从北纬25°的山地果园，带着晨露与阳光来到餐桌。了解产地故事，选购当季鲜果。">
-  <title>山野有橙 — 赣南脐橙，来自北纬25°的甜</title>
-  <link rel="preload" as="image" href="assets/gannan-orchard-hero.png" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fff8ed">
+  <meta name="description" content="山野有橙，来自赣南山地果园的脐橙品牌。走进果园，遇见北纬25°的清甜。">
+  <title>山野有橙 — 赣南脐橙，来自北纬 25° 的甜</title>
+  <link rel="preload" as="image" href="assets/gannan-orchard-hero.png" fetchpriority="high"><link rel="stylesheet" href="styles.css">
+  <script src="site-shell.js" defer></script><script src="script.js" defer></script>
 </head>
-<body>
-  <a class="skip-link" href="#main">跳转到主要内容</a>
-  <div class="juice-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
-
-  <!-- 首访开场：纯 CSS/SVG 构成的橙子，尊重减少动态设置。 -->
-  <div class="intro" id="intro" aria-label="欢迎来到山野有橙" role="status">
-    <div class="intro-fruit" aria-hidden="true"><span></span><i></i></div>
-    <p>山野有橙 <span>·</span> 一颗来自赣南的甜</p>
-    <button class="intro-skip" id="skipIntro" type="button">跳过动画</button>
-  </div>
-
-  <header class="site-header" id="top">
-    <nav class="nav-shell" aria-label="主导航">
-      <a class="brand" href="#top" aria-label="山野有橙，返回首页">
-        <span class="brand-mark" aria-hidden="true">橙</span>
-        <span class="brand-name">山野有橙<small>GANNAN · ORCHARD</small></span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primaryNav"><span></span><span></span></button>
-      <div class="nav-links" id="primaryNav">
-        <a href="#home" class="active">首页</a><a href="#shop">鲜果商城</a><a href="#story">产地故事</a><a href="#trace">品质溯源</a><a href="#harvest">采摘节</a><a href="#contact">联系购买</a>
-      </div>
-      <div class="nav-actions">
-        <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" aria-label="开启轻柔提示音"><span class="sound-glyph" aria-hidden="true">♪</span><span class="sound-label">声音已关</span></button>
-        <a class="cart-link" href="#shop" aria-label="购物袋，0 件"><span aria-hidden="true">袋</span><b id="cartCount">0</b></a>
-      </div>
-    </nav>
-  </header>
-
+<body data-page="home">
+  <a class="skip-link" href="#main">跳转到主要内容</a><div class="juice-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <div id="siteHeader"></div>
+  <div class="intro" id="intro" aria-label="欢迎来到山野有橙" role="status"><div class="intro-fruit" aria-hidden="true"><span></span><i></i></div><p>山野有橙 <span>·</span> 一颗来自赣南的甜</p><button class="intro-skip" id="skipIntro" type="button">跳过动画</button></div>
   <main id="main">
-    <!-- Hero：真实果园主视觉 + 轻量光斑和指针视差。 -->
-    <section class="hero" id="home" aria-labelledby="heroTitle">
-      <div class="hero-photo" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-content wrap">
-        <p class="eyebrow"><span class="eyebrow-line"></span>江西 · 赣州 · 北纬 25°</p>
-        <h1 id="heroTitle">赣南脐橙，<br>来自北纬 25°<br>的<span>甜。</span></h1>
-        <p class="hero-copy">一口阳光熟成的甜，<br>从赣南山地，鲜到你家餐桌。</p>
-        <div class="hero-ctas"><a class="button button-dark" href="#shop">尝一颗赣南甜 <span aria-hidden="true">↗</span></a><a class="text-link light-link" href="#story">走进我们的果园 <span aria-hidden="true">↓</span></a></div>
-      </div>
-      <div class="hero-note" aria-hidden="true"><span>GANNAN · JIANGXI</span><i></i><span>24°29′—27°09′ N</span></div>
-      <div class="hero-side-caption"><span>清晨 06:18</span><span>果园正在醒来</span></div>
-    </section>
-
-    <!-- 原产地信任点：不使用夸张功效和未经核验的检测数值。 -->
-    <section class="promise section-pad" aria-labelledby="promiseTitle">
-      <div class="wrap">
-        <div class="section-heading promise-heading reveal"><p class="eyebrow">A PLACE, A FLAVOR</p><h2 id="promiseTitle">甜，是这片土地<br>慢慢养出来的。</h2><p class="section-intro">山地、红壤与充足日照，共同养成赣南脐橙清爽的香气与丰盈汁水。</p></div>
-        <div class="promise-grid">
-          <article class="promise-item reveal"><span class="promise-no">01</span><span class="promise-symbol" aria-hidden="true">◎</span><h3>地理标志产区</h3><p>来自赣南脐橙核心产区<br>每一季都回到土地本身</p></article>
-          <article class="promise-item reveal"><span class="promise-no">02</span><span class="promise-symbol" aria-hidden="true">☼</span><h3>山地阳光熟成</h3><p>在充足日照里慢慢生长<br>把清甜留在果肉里</p></article>
-          <article class="promise-item reveal"><span class="promise-no">03</span><span class="promise-symbol" aria-hidden="true">◌</span><h3>薄皮，饱满汁水</h3><p>轻轻剥开就能闻到<br>新鲜柑橘的明亮香气</p></article>
-          <article class="promise-item reveal"><span class="promise-no">04</span><span class="promise-symbol" aria-hidden="true">≈</span><h3>酸甜恰好平衡</h3><p>鲜活果香与清润甜感<br>一口就能尝出季节</p></article>
-          <article class="promise-item reveal"><span class="promise-no">05</span><span class="promise-symbol" aria-hidden="true">⌁</span><h3>现采冷链发出</h3><p>采摘后及时分拣装箱<br>冷链直发锁住新鲜</p></article>
-        </div>
-        <div class="promise-foot"><span>一方水土，养一方橙。</span><span>从枝头到餐桌，每一步都有来处。</span></div>
-      </div>
-    </section>
-
-    <!-- 商品卡的价格、库存和 SKU 为演示占位，接入店铺数据后替换。 -->
-    <section class="shop section-pad" id="shop" aria-labelledby="shopTitle">
-      <div class="wrap">
-        <div class="shop-head reveal"><div><p class="eyebrow">THE FIRST PICK</p><h2 id="shopTitle">把果园的清晨，<br>寄给你。</h2></div><p>当季鲜果，按需挑选。<br>采摘日期与发货安排以实际批次为准。</p></div>
-        <div class="product-grid">
-          <article class="product-card product-feature reveal" data-product="山地鲜果 · 5 斤装" data-price="¥ 69">
-            <button class="product-visual visual-orange" type="button" aria-label="拖动查看赣南脐橙"><img src="assets/gannan-orange-product.png" alt="阳光下的赣南脐橙与红土" loading="lazy"><span class="drag-hint">按住拖动 · 看看果皮的光</span><span class="product-stamp">当季鲜果</span><span class="splash" aria-hidden="true"></span></button>
-            <div class="product-info"><div><p class="product-kicker">ORCHARD PICK · 01</p><h3>山地鲜果 <small>5 斤分享装</small></h3></div><div class="product-buy"><strong>¥ 69</strong><button class="add-button" type="button" aria-label="山地鲜果 5 斤装，加入购物袋" data-add>＋</button></div></div>
-            <p class="product-note">一箱刚刚好 · 约 8–12 枚 <span>演示价格</span></p>
-          </article>
-          <article class="product-card reveal" data-product="山野礼盒 · 10 斤装" data-price="¥ 138">
-            <button class="product-visual visual-gift" type="button" aria-label="拖动查看赣南脐橙礼盒"><img src="assets/gannan-orange-product.png" alt="赣南脐橙礼盒与切开的鲜果" loading="lazy"><span class="drag-hint">按住拖动 · 看看果皮的光</span><span class="product-stamp stamp-green">山野礼赠</span><span class="splash" aria-hidden="true"></span></button>
-            <div class="product-info"><div><p class="product-kicker">GIFT BOX · 02</p><h3>山野礼盒 <small>10 斤分享装</small></h3></div><div class="product-buy"><strong>¥ 138</strong><button class="add-button" type="button" aria-label="山野礼盒 10 斤装，加入购物袋" data-add>＋</button></div></div>
-            <p class="product-note">节气心意 · 适合拜访与分享 <span>演示价格</span></p>
-          </article>
-          <article class="group-buy reveal"><div class="group-art"><img src="assets/gannan-orange-product.png" alt="赣南脐橙礼盒静物" loading="lazy"><span>ORANGE<br>TOGETHER</span></div><p class="product-kicker">FOR GOOD GATHERINGS · 03</p><h3>把好滋味，分享给更多人。</h3><p>企业福利、品牌联名、节庆团购。<br>一起聊聊你的果园计划。</p><a class="text-link" href="mailto:hello@gannanor.example?subject=赣南脐橙团购咨询">咨询团购 <span aria-hidden="true">↗</span></a></article>
-        </div>
-        <p class="shop-disclaimer">页面中的商品价格及数量仅作交互演示，请在正式上线前替换为真实 SKU 与销售数据。</p>
-      </div>
-    </section>
-
-    <!-- 产地叙事：滚动显现时间点、线路描边与缓慢视差。 -->
-    <section class="story section-pad" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-layout">
-        <div class="story-copy reveal"><p class="eyebrow">A JOURNEY OF ONE ORANGE</p><h2 id="storyTitle">一颗橙子，<br>走过一段<span>山路。</span></h2><p class="story-intro">它从北纬 25° 的山地开始，穿过红壤、枝叶、晨光与果农的手，最后抵达你手边。</p>
-          <ol class="story-steps" id="storySteps">
-            <li class="is-current"><span>01</span><div><h3>赣南山地 · 迎着晨光生长</h3><p>群山环抱，山风与日照陪着果树慢慢生长。</p></div></li>
-            <li><span>02</span><div><h3>一捧红土 · 一季细心照料</h3><p>果农巡园、养树、护果，把季节过得认真。</p></div></li>
-            <li><span>03</span><div><h3>枝头采摘 · 鲜果细心分选</h3><p>成熟时节再采下，按当批品质分拣装箱。</p></div></li>
-            <li><span>04</span><div><h3>冷链启程 · 甜味一路同行</h3><p>从产地启程，尽可能把新鲜送到家门口。</p></div></li>
-          </ol>
-        </div>
-        <div class="story-visual reveal"><img src="assets/gannan-orchard-hero.png" alt="晨光穿过赣南山地果园，枝头挂着成熟的脐橙" loading="lazy"><div class="story-image-tint"></div><div class="story-route" aria-hidden="true"><span class="route-dot"></span><span class="route-dot"></span><span class="route-dot"></span><span class="route-dot"></span><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M15 18 C40 28 28 48 53 54 S76 70 82 85"/></svg></div><div class="story-image-caption"><span>赣南 · 果园清晨</span><span>从这里出发</span></div><span class="story-sun" aria-hidden="true"></span></div>
-      </div>
-      <div class="story-band" aria-hidden="true"><span>FROM THE HILLS OF GAN NAN</span><i>✳</i><span>GROWN SLOW, PICKED FRESH</span><i>✳</i><span>FROM THE HILLS OF GAN NAN</span></div>
-    </section>
-
-    <!-- 溯源展示为前端交互原型，真实二维码、报告及产地批次需接入后端。 -->
-    <section class="trace section-pad" id="trace" aria-labelledby="traceTitle">
-      <div class="wrap trace-layout">
-        <div class="trace-lead reveal"><p class="eyebrow">KNOW WHERE IT GROWS</p><h2 id="traceTitle">好吃，也要<br>来路清楚。</h2><p>从果园批次到采摘日期，每一箱都应该有自己的故事。扫码溯源将在接入真实产地数据后开放。</p><a class="text-link" href="#qualityDetails">看看我们的把关方式 <span aria-hidden="true">↓</span></a></div>
-        <div class="trace-board reveal" id="qualityDetails">
-          <div class="trace-topline"><span>果园档案 / ORIGIN NOTES</span><span>SEASON 2026</span></div>
-          <div class="trace-map" aria-label="赣南果园至冷链发出的路线示意图">
-            <svg viewBox="0 0 520 240" role="img" aria-label="赣南山地果园至分拣点，再到冷链发出的示意路线"><path class="map-contour" d="M11 174C77 114 122 160 191 111S309 69 363 114s104 35 147-8M-4 205c75-51 109-8 189-44s115-65 172-30 112 26 173-16M37 72c62 53 95 34 154 1s114-29 173 1 100 23 139-1"/><path class="map-route" d="M92 164C160 141 163 103 244 102S326 143 397 93"/></svg>
-            <span class="map-node node-a"><i></i><b>果园</b></span><span class="map-node node-b"><i></i><b>分拣</b></span><span class="map-node node-c"><i></i><b>冷链</b></span>
-            <span class="map-label">赣州 · 江西</span>
-          </div>
-          <div class="trace-cards">
-            <button class="trace-card" type="button" aria-expanded="false"><span class="trace-card-no">01 / BATCH</span><span class="trace-card-title">扫码看果园批次 <b>＋</b></span><span class="trace-card-detail">接入正式溯源系统后，展示果园信息与批次流转。</span></button>
-            <button class="trace-card" type="button" aria-expanded="false"><span class="trace-card-no">02 / QUALITY</span><span class="trace-card-title">查看检测报告 <b>＋</b></span><span class="trace-card-detail">正式上线时补充对应批次检测机构、报告编号与原件。</span></button>
-            <button class="trace-card" type="button" aria-expanded="false"><span class="trace-card-no">03 / PICKED</span><span class="trace-card-title">本批采摘日期 <b>＋</b></span><span class="trace-card-detail">采摘日期随实际发货批次更新，页面示例不代表实时数据。</span></button>
-          </div>
-          <p class="trace-note">路线仅为产地故事示意；实际溯源信息以对应商品批次为准。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 评价横向轨道：自动慢移，hover / focus 停止，支持鼠标与触摸拖动。 -->
-    <section class="voices section-pad" id="voices" aria-labelledby="voicesTitle">
-      <div class="wrap voices-head reveal"><div><p class="eyebrow">NOTES FROM THE TABLE</p><h2 id="voicesTitle">甜味，会被记住。</h2></div><span>顾客反馈示例 · 上线前请替换为真实评价</span></div>
-      <div class="review-viewport" id="reviewViewport" tabindex="0" aria-label="顾客评价轮播，可拖动浏览">
-        <div class="review-track" id="reviewTrack">
-          <article class="review-card"><span class="review-mark">“</span><p>刚打开箱子，果香就出来了。早上剥一颗，整个厨房都是阳光的味道。</p><div class="review-person"><span class="avatar avatar-1">林</span><span><b>林女士</b><small>赣南脐橙 · 5 斤分享装</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article>
-          <article class="review-card"><span class="review-mark">“</span><p>送给爸妈的礼盒很合适，包装干净，橙子皮薄，饭后大家分着吃刚刚好。</p><div class="review-person"><span class="avatar avatar-2">周</span><span><b>周先生</b><small>山野礼盒 · 家庭分享</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article>
-          <article class="review-card"><span class="review-mark">“</span><p>酸甜很清爽，不是那种腻的甜。孩子自己剥了一颗，还说下次想看橙子怎么长出来。</p><div class="review-person"><span class="avatar avatar-3">陈</span><span><b>陈女士</b><small>赣南脐橙 · 回购顾客</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article>
-          <article class="review-card"><span class="review-mark">“</span><p>很喜欢它的果香，橙皮放在桌边几天，家里也有淡淡的清新味道。</p><div class="review-person"><span class="avatar avatar-4">许</span><span><b>许先生</b><small>赣南脐橙 · 5 斤分享装</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article>
-        </div>
-      </div>
-      <div class="wrap reviews-foot"><span>样例内容用于展示轮播样式，非真实客户评价。</span><div><button id="reviewPrev" type="button" aria-label="上一条评价">←</button><button id="reviewNext" type="button" aria-label="下一条评价">→</button></div></div>
-    </section>
-
-    <!-- 采摘节：倒计时以可调整的演示日期计算，优惠领取仅做本地交互反馈。 -->
-    <section class="harvest section-pad" id="harvest" aria-labelledby="harvestTitle">
-      <div class="harvest-photo" aria-hidden="true"></div><div class="harvest-overlay" aria-hidden="true"></div><div class="harvest-particles" id="harvestParticles" aria-hidden="true"></div>
-      <div class="wrap harvest-content reveal"><p class="eyebrow">A LITTLE CLOSER TO THE ORCHARD</p><h2 id="harvestTitle">等一季好橙，<br>也等你来。</h2><p>新果季即将启程。加入采摘节提醒，<br>等第一颗熟透的赣南脐橙。</p><div class="countdown" aria-label="采摘节倒计时"><div><b id="countDays">--</b><span>天</span></div><i>:</i><div><b id="countHours">--</b><span>时</span></div><i>:</i><div><b id="countMinutes">--</b><span>分</span></div><i>:</i><div><b id="countSeconds">--</b><span>秒</span></div></div><button class="button button-orange" id="couponButton" type="button">领取采摘节提醒 <span aria-hidden="true">↗</span></button><p class="harvest-feedback" id="couponFeedback" role="status" aria-live="polite"></p></div>
-      <span class="harvest-coordinate" aria-hidden="true">北纬 25° · 赣南果园</span>
-    </section>
+    <section class="hero" id="home" aria-labelledby="heroTitle"><div class="hero-photo" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div><div class="hero-content wrap"><p class="eyebrow"><span class="eyebrow-line"></span>江西 · 赣州 · 北纬 25°</p><h1 id="heroTitle">赣南脐橙，<br>来自北纬 25°<br>的<span>甜。</span></h1><p class="hero-copy">一口阳光熟成的甜，<br>从赣南山地，鲜到你家餐桌。</p><div class="hero-ctas"><a class="button button-dark" href="store.html">尝一颗赣南甜 <span aria-hidden="true">↗</span></a><a class="text-link light-link" href="origin.html">走进我们的果园 <span aria-hidden="true">↗</span></a></div></div><div class="hero-note" aria-hidden="true"><span>GANNAN · JIANGXI</span><i></i><span>24°29′—27°09′ N</span></div><div class="hero-side-caption"><span>清晨 06:18</span><span>果园正在醒来</span></div></section>
+    <section class="promise section-pad" aria-labelledby="promiseTitle"><div class="wrap"><div class="section-heading promise-heading reveal"><p class="eyebrow">A PLACE, A FLAVOR</p><h2 id="promiseTitle">甜，是这片土地<br>慢慢养出来的。</h2><p class="section-intro">山地、红壤与充足日照，共同养成赣南脐橙清爽的香气与丰盈汁水。</p></div><div class="promise-grid"><article class="promise-item reveal"><span class="promise-no">01</span><span class="promise-symbol" aria-hidden="true">◎</span><h3>地理标志产区</h3><p>来自赣南脐橙核心产区<br>每一季都回到土地本身</p></article><article class="promise-item reveal"><span class="promise-no">02</span><span class="promise-symbol" aria-hidden="true">☼</span><h3>山地阳光熟成</h3><p>在充足日照里慢慢生长<br>把清甜留在果肉里</p></article><article class="promise-item reveal"><span class="promise-no">03</span><span class="promise-symbol" aria-hidden="true">◌</span><h3>薄皮，饱满汁水</h3><p>轻轻剥开就能闻到<br>新鲜柑橘的明亮香气</p></article><article class="promise-item reveal"><span class="promise-no">04</span><span class="promise-symbol" aria-hidden="true">≈</span><h3>酸甜恰好平衡</h3><p>鲜活果香与清润甜感<br>一口就能尝出季节</p></article><article class="promise-item reveal"><span class="promise-no">05</span><span class="promise-symbol" aria-hidden="true">⌁</span><h3>现采冷链发出</h3><p>采摘后及时分拣装箱<br>冷链直发锁住新鲜</p></article></div><div class="promise-foot"><span>一方水土，养一方橙。</span><span>从枝头到餐桌，每一步都有来处。</span></div></div></section>
+    <section class="page-gateways section-pad" aria-labelledby="gatewaysTitle"><div class="wrap"><div class="gateway-heading reveal"><p class="eyebrow">TAKE YOUR OWN PATH</p><h2 id="gatewaysTitle">从一颗橙子，<br>认识一片土地。</h2></div><div class="gateway-grid"><a class="gateway-card gateway-shop reveal" href="store.html"><span>01 / SHOP</span><h3>鲜果商城</h3><p>挑选当季鲜果与山野礼盒</p><b aria-hidden="true">↗</b></a><a class="gateway-card gateway-origin reveal" href="origin.html"><span>02 / ORIGIN</span><h3>产地故事</h3><p>沿着客家山路，走进赣南果园</p><b aria-hidden="true">↗</b></a><a class="gateway-card gateway-trace reveal" href="trace.html"><span>03 / TRACE</span><h3>品质溯源</h3><p>了解一箱橙子的来处与批次</p><b aria-hidden="true">↗</b></a><a class="gateway-card gateway-harvest reveal" href="harvest.html"><span>04 / HARVEST</span><h3>采摘节</h3><p>等新果季，也等你来果园</p><b aria-hidden="true">↗</b></a></div></div></section>
+    <section class="voices section-pad" id="voices" aria-labelledby="voicesTitle"><div class="wrap voices-head reveal"><div><p class="eyebrow">NOTES FROM THE TABLE</p><h2 id="voicesTitle">甜味，会被记住。</h2></div><span>顾客反馈示例 · 上线前请替换为真实评价</span></div><div class="review-viewport" id="reviewViewport" tabindex="0" aria-label="顾客评价轮播，可拖动浏览"><div class="review-track" id="reviewTrack"><article class="review-card"><span class="review-mark">“</span><p>刚打开箱子，果香就出来了。早上剥一颗，整个厨房都是阳光的味道。</p><div class="review-person"><span class="avatar avatar-1">林</span><span><b>林女士</b><small>赣南脐橙 · 5 斤分享装</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article><article class="review-card"><span class="review-mark">“</span><p>送给爸妈的礼盒很合适，包装干净，橙子皮薄，饭后大家分着吃刚刚好。</p><div class="review-person"><span class="avatar avatar-2">周</span><span><b>周先生</b><small>山野礼盒 · 家庭分享</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article><article class="review-card"><span class="review-mark">“</span><p>酸甜很清爽，不是那种腻的甜。孩子自己剥了一颗，还说下次想看橙子怎么长出来。</p><div class="review-person"><span class="avatar avatar-3">陈</span><span><b>陈女士</b><small>赣南脐橙 · 回购顾客</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article><article class="review-card"><span class="review-mark">“</span><p>很喜欢它的果香，橙皮放在桌边几天，家里也有淡淡的清新味道。</p><div class="review-person"><span class="avatar avatar-4">许</span><span><b>许先生</b><small>赣南脐橙 · 5 斤分享装</small></span><span class="review-stars" aria-label="5 星">★★★★★</span></div></article></div></div><div class="wrap reviews-foot"><span>样例内容用于展示轮播样式，非真实客户评价。</span><div><button id="reviewPrev" type="button" aria-label="上一条评价">←</button><button id="reviewNext" type="button" aria-label="下一条评价">→</button></div></div></section>
   </main>
+  <div id="siteFooter"></div><div class="toast" id="toast" role="status" aria-live="polite"></div><div class="juice-cursor" id="juiceCursor" aria-hidden="true"></div>
+</body></html>
 
-  <footer class="footer" id="contact">
-    <div class="footer-oranges" aria-hidden="true"><span>橙</span><span>橙</span><span>橙</span></div>
-    <div class="wrap footer-main"><div class="footer-brand"><a class="brand footer-logo" href="#top"><span class="brand-mark" aria-hidden="true">橙</span><span class="brand-name">山野有橙<small>GANNAN · ORCHARD</small></span></a><p>让每一颗橙子，<br>都有一段看得见的来路。</p></div><div class="footer-links"><div><b>继续探索</b><a href="#shop">鲜果商城</a><a href="#story">产地故事</a><a href="#trace">品质溯源</a></div><div><b>联系与帮助</b><a href="mailto:hello@gannanor.example">商务合作</a><a href="mailto:care@gannanor.example">售后服务</a><a href="#harvest">采摘节提醒</a></div><div class="qr-block"><span class="qr-placeholder" aria-label="公众号二维码占位"><span></span></span><small>公众号二维码占位<br>替换为正式二维码</small></div></div></div>
-    <div class="wrap footer-bottom"><span>© 2026 山野有橙 · 赣南脐橙品牌示例</span><span>产地地址、备案与联系方式请在上线前补全</span><a href="#top">回到山野 ↑</a></div>
-  </footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <div class="juice-cursor" id="juiceCursor" aria-hidden="true"></div>
-</body>
-</html>

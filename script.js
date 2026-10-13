@@ -136,6 +136,8 @@
   // Product image gestures: subtle 3D tilt preview, cut/splash feedback and cart flight.
   const cartCount = $('#cartCount');
   let cartItems = 0;
+  try { cartItems = Number(localStorage.getItem('gannan-cart-count') || 0); } catch (_) {}
+  if (cartCount) cartCount.textContent = String(cartItems);
   let toastTimer;
   const toast = message => {
     const el = $('#toast');
@@ -202,6 +204,7 @@
       flyer.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: `translate(${dx}px,${dy}px) scale(.12)`, opacity: .15 }], { duration: 680, easing: 'cubic-bezier(.2,.8,.25,1)' }).finished.finally(() => flyer.remove());
     }
     cartItems += 1;
+    try { localStorage.setItem('gannan-cart-count', String(cartItems)); } catch (_) {}
     if (cartCount) cartCount.textContent = String(cartItems);
     target?.setAttribute('aria-label', `购物袋，${cartItems} 件`);
     cartCount?.classList.remove('bump');
@@ -257,7 +260,7 @@
     const values = [days, hours, minutes, seconds].map(value => String(value).padStart(2, '0'));
     ['#countDays', '#countHours', '#countMinutes', '#countSeconds'].forEach((selector, index) => {
       const digit = $(selector);
-      if (digit.textContent === values[index]) return;
+      if (!digit || digit.textContent === values[index]) return;
       digit.textContent = values[index];
       digit.classList.remove('flip');
       void digit.offsetWidth;
@@ -265,7 +268,7 @@
     });
   };
   updateCountdown();
-  window.setInterval(updateCountdown, 1000);
+  if ($('#countSeconds')) window.setInterval(updateCountdown, 1000);
 
   // Small seasonal particle burst; capped and reduced on phones.
   const couponButton = $('#couponButton');
@@ -285,4 +288,12 @@
       orange.addEventListener('animationend', () => orange.remove(), { once: true });
     }
   });
+
+  // Contact form preview: validate locally, then clearly disclose that no message is sent.
+  $('#contactForm')?.addEventListener('submit', event => {
+    event.preventDefault();
+    $('#formFeedback').textContent = '演示模式：表单验证通过，但尚未发送。请接入真实邮件或 CRM 服务。';
+    toast('表单预览完成，尚未发送');
+  });
 })();
+
